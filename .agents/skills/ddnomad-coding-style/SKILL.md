@@ -7,6 +7,7 @@ Scope
 -----
 
 - Apply to source code, comments, docstrings, identifiers, user-facing messages, and code examples in documentation. Documentation prose must follow `ddnomad-docs-style`.
+- Limit style changes to the requested work and code being edited unless broader cleanup is requested
 
 Formatting
 ----------
