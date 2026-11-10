@@ -23,4 +23,18 @@ Off-the-shelf skills are great in theory, but can quickly become counterproducti
 Current Status
 --------------
 
-Inception. Most skills are either absent or do not cover everything that dd would want to cover.
+Inception. Most skills are either absent or do not cover everything that dd would want to cover yet.
+
+Quick Start
+-----------
+
+### Manual Skills Installation
+
+From your project root, download the skills:
+
+```sh
+curl -fsSL https://github.com/ddnomad/skills/archive/refs/heads/main.tar.gz \
+  | tar -xz --strip-components=1 skills-main/.agents/skills
+```
+
+Copy the **Required Skills** section from this repository's [AGENTS.md](AGENTS.md) into your project's `AGENTS.md`. **This is crucial**, as it tells agents when to proactively read and apply the skills, rather than merely making the files available, hoping they will be used.
