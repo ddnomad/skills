@@ -13,9 +13,9 @@ Language
 --------
 
 - Read and apply the shared [Language](../ddnomad-docs-style/SKILL.md#language) rules to comments, docstrings, user-facing text, and new identifiers. This does not apply documentation formatting rules to source files.
-- Use implementation comments primarily to explain unexpected behaviour, non-obvious constraints, or seemingly odd choices, not to narrate straightforward code
-- Limit factual claims to behaviour verified in the relevant implementation. Do not promise input properties, caller behaviour, or system-wide guarantees based on assumptions about other code.
-- State required preconditions as requirements, not claims that callers already satisfy them. If an explanation depends on enforcement elsewhere, verify, identify and stress that enforcement point, otherwise omit the claim or raise the uncertainty.
+- Use comments and docstrings to state concrete local conditions, results, and failure behaviour or explain non-obvious choices, not to narrate straightforward code
+- Include external behaviour only when essential to understanding the local code, and verify and identify the dependency. Omit inferred input provenance and incidental absences of side effects.
+- Distinguish required preconditions from enforced guarantees. Do not claim callers satisfy them without evidence. Raise unresolved assumptions for clarification.
 
 Illustrative comment wording:
 
@@ -24,8 +24,11 @@ Illustrative comment wording:
 | `// Keep the second check: the value may change while the lock is released` | `// The value cannot change because callers hold the lock` | Assumes caller behaviour instead of explaining the local defensive check |
 | `// Requires a non-empty list` | `// The list is always non-empty because validation happens upstream` | Confuses a required precondition with an unverified guarantee |
 | `// Skip malformed entries so one bad record does not abort the batch` | `// Malformed entries cannot reach this code` | Promises behaviour elsewhere instead of explaining the local recovery policy |
+| `/// Return None when no eligible record matches` | `/// A miss is normal for a hand-written address` | Invents an input source and interpretation instead of stating the result |
+| `/// Match only records with Active status` | `/// Admit fresh credentials while the operations layer preserves existing grants` | Obscures the local condition with cross-layer workflow narration |
+| Omit irrelevant side-effect commentary | `/// This read writes no audit entry` | Turns an absent side effect into a promise without establishing its relevance to the local contract |
 
-Use these examples only when the local behaviour or required contract has been verified.
+Use these examples only when the stated behaviour is verified and relevant to the local contract or rationale.
 
 Formatting
 ----------
