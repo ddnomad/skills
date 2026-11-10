@@ -9,6 +9,24 @@ Scope
 - Apply to source code, comments, docstrings, identifiers, user-facing messages, and code examples in documentation. Documentation prose must follow `ddnomad-docs-style`.
 - Limit style changes to the requested work and code being edited unless broader cleanup is requested
 
+Language
+--------
+
+- Read and apply the shared [Language](../ddnomad-docs-style/SKILL.md#language) rules to comments, docstrings, user-facing text, and new identifiers. This does not apply documentation formatting rules to source files.
+- Use implementation comments primarily to explain unexpected behaviour, non-obvious constraints, or seemingly odd choices, not to narrate straightforward code
+- Limit factual claims to behaviour verified in the relevant implementation. Do not promise input properties, caller behaviour, or system-wide guarantees based on assumptions about other code.
+- State required preconditions as requirements, not claims that callers already satisfy them. If an explanation depends on enforcement elsewhere, verify, identify and stress that enforcement point, otherwise omit the claim or raise the uncertainty.
+
+Illustrative comment wording:
+
+| Do | Don't | Issue |
+| --- | --- | --- |
+| `// Keep the second check: the value may change while the lock is released` | `// The value cannot change because callers hold the lock` | Assumes caller behaviour instead of explaining the local defensive check |
+| `// Requires a non-empty list` | `// The list is always non-empty because validation happens upstream` | Confuses a required precondition with an unverified guarantee |
+| `// Skip malformed entries so one bad record does not abort the batch` | `// Malformed entries cannot reach this code` | Promises behaviour elsewhere instead of explaining the local recovery policy |
+
+Use these examples only when the local behaviour or required contract has been verified.
+
 Formatting
 ----------
 
@@ -19,11 +37,6 @@ Formatting
 ### Line Length
 
 - Wrap code at a target line length of 150 characters
-
-Language
---------
-
-- Use British English in comments, documentation strings, user facing text, and new identifiers. Preserve names required by external APIs or existing contracts.
 
 Programming Language Specific Rules
 -----------------------------------

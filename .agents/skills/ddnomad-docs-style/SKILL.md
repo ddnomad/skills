@@ -8,6 +8,25 @@ Scope
 
 - Apply to documentation prose and Markdown structure. Source comments and docstrings must use `ddnomad-coding-style`. Load and apply that skill for code examples in documentation too.
 - Treat `SKILL.md` and other Markdown files within skills as documentation. All rules in this skill apply to them.
+- The shared [Language](#language) rules also apply when required by other skills; this does not extend documentation formatting rules to source code
+
+Language
+--------
+
+- Use British English. Preserve exact quotations, proper names, existing code or API identifiers, and names required by external APIs or existing contracts.
+- Describe state, behaviour, and constraints literally. Avoid attributing intent or human relationships to data and system components; name the actual operation or condition instead.
+- Prefer explicit domain terms over narrative shorthand. Conventional technical actions such as "the service rejects the request" are generally accepted
+- Do not replace clear terminology with awkward passive wording
+
+Illustrative wording:
+
+| Do | Don't | Issue |
+| --- | --- | --- |
+| Cached entries expire after five minutes | The cache wants fresh data | Attributes desire to a cache and leaves the expiry condition unspecified |
+| Suspended accounts cannot create new sessions | Suspended accounts lend their sessions to nobody | Uses a lending metaphor that obscures the actual restriction |
+| The service rejects requests without an authentication token | The service is unhappy with the request | Attributes emotion to a service and omits the rejection condition |
+
+Use these forms only when the stated behaviour and conditions are verified.
 
 Formatting
 ----------
@@ -42,8 +61,3 @@ References
 - Define each labelled item with a short, meaningful title, such as `TASK-5 (Retry Behaviour)`, and keep that title consistent across related documents. In definition tables, keep the ID and title together.
 - Refer to labelled items through descriptive links containing the ID and established title, rather than bare IDs. Do not repeat the title unnecessarily within the item's own definition.
 - Document labels are not program identifiers. Do not rename code symbols, API fields, or literal values to satisfy these rules.
-
-Language
---------
-
-- Use British English throughout documentation. Preserve exact quotations, proper names, and code or API identifiers.
