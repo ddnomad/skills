@@ -23,7 +23,7 @@ Off-the-shelf skills are great in theory, but can quickly become counterproducti
 Current Status
 --------------
 
-Inception. Most skills are either absent or do not cover everything that dd would want to cover yet.
+MVP. Minimum coverage with fundamental skills that cover the most pressing issues dd encounteres during their day-to-day work. More to come.
 
 Quick Start
 -----------
