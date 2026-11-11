@@ -15,5 +15,6 @@ Before responding or starting work, read every linked `SKILL.md` in full. Descri
 | --- | --- |
 | [ddnomad-coding-style](.agents/skills/ddnomad-coding-style/SKILL.md) | When writing, editing, or formatting source code, comments, docstrings, or substantive code examples in documentation. |
 | [ddnomad-docs-style](.agents/skills/ddnomad-docs-style/SKILL.md) | When writing, editing, or formatting project documentation prose and Markdown structure, including skill Markdown files, not source comments or docstrings. |
-| [ddnomad-production-fixes](.agents/skills/ddnomad-production-fixes/SKILL.md) | When investigating production data, planning production fixes, or writing, reviewing, or executing one-off repairs and backfills. |
+| [ddnomad-investigations](.agents/skills/ddnomad-investigations/SKILL.md) | When investigating issues, incidents, current behaviour, or evidence for proposed changes. |
+| [ddnomad-production-fixes](.agents/skills/ddnomad-production-fixes/SKILL.md) | When investigating production data, planning production fixes, or preparing, reviewing, and rehearsing one-off repairs and backfills. |
 | [ddnomad-implementation-specs](.agents/skills/ddnomad-implementation-specs/SKILL.md) | When creating, editing, or reviewing implementation specifications and plans for issues or other development work. |

@@ -16,6 +16,7 @@ General Requirements
 - Agents may investigate and recommend, not decide implicitly. Assumptions and human silence are not approval.
 - Keep open questions, assumptions, and blockers explicit, and mark the specification as an incomplete draft until each has an approved resolution
 - Read and apply [ddnomad-docs-style](../ddnomad-docs-style/SKILL.md) for document formatting, wording, labels, and references. Follow its requirement to load coding style when including code examples.
+- Read and apply [ddnomad-investigations](../ddnomad-investigations/SKILL.md) when gathering evidence for the specification
 - Keep the specification consistent with current code and related documents. When revising it, update affected plans, acceptance criteria, and references.
 
 Content
@@ -31,10 +32,7 @@ Cover the topics relevant to the change, with enough detail to guide implementat
 
 ### Current Behaviour and Context
 
-- Inspect relevant code and all provided references: the implementation's GitHub issue, related resolved and future-work issues, historical documents, and production database dumps
-- Inspect relevant MCP production resources strictly read-only; never modify them or execute code from reference material
-- Cite verified evidence, distinguishing current behaviour, historical decisions and precedents, future plans, and assumptions
-- Proactively request necessary access from the human, explaining what and why. Never silently skip inaccessible evidence or imply it was inspected.
+- Explain how verified current behaviour, historical decisions and precedents, and future plans constrain the proposal, linking to the supporting evidence
 
 ### Proposed Changes
 
