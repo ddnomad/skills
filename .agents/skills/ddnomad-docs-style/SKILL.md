@@ -17,6 +17,7 @@ Language
 - Describe state, behaviour, and constraints literally. Avoid attributing intent or human relationships to data and system components; name the actual operation or condition instead.
 - Prefer explicit domain terms over narrative shorthand. Conventional technical actions such as "the service rejects the request" are generally accepted
 - Do not replace clear terminology with awkward passive wording
+- Follow established conventions, but do not infer a general wording rule from a few nearby examples
 
 Illustrative wording:
 
@@ -25,6 +26,7 @@ Illustrative wording:
 | Cached entries expire after five minutes | The cache wants fresh data | Attributes desire to a cache and leaves the expiry condition unspecified |
 | Suspended accounts cannot create new sessions | Suspended accounts lend their sessions to nobody | Uses a lending metaphor that obscures the actual restriction |
 | The service rejects requests without an authentication token | The service is unhappy with the request | Attributes emotion to a service and omits the rejection condition |
+| List the user's active sessions | List the active sessions of one user | Adds an unnecessary count where the user is already identified |
 
 Use these forms only when the stated behaviour and conditions are verified.
 
